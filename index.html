@@ -1,151 +1,157 @@
-<!DOCTYPE html><html lang="pt-br">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Produtos Shopee Matheus</title>
+  <title>Minha Loja</title>
   <style>
     body {
-      background-color: #121212;
-      color: white;
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-    }header {
-  background-color: #f1582c;
-  padding: 10px;
-  text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.category-button {
-  background-color: #fff;
-  color: #f1582c;
-  border: none;
-  padding: 10px 15px;
-  margin: 5px;
-  cursor: pointer;
-  border-radius: 20px;
-  font-weight: bold;
-}
-
-.category-button:hover,
-.category-button.active {
-  background-color: #f1582c;
-  color: white;
-}
-
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-
-.product-card {
-  background-color: #1f1f1f;
-  border-radius: 10px;
-  padding: 15px;
-  text-align: center;
-  transition: transform 0.3s;
-}
-
-.product-card:hover {
-  transform: scale(1.03);
-}
-
-.product-image {
-  width: 100%;
-  border-radius: 8px;
-}
-
-.product-name {
-  font-size: 16px;
-  margin-top: 10px;
-}
-
-.product-link {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 15px;
-  background-color: #f1582c;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-.hidden {
-  display: none;
-}
-
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+    header {
+      background-color: #ff5722;
+      padding: 10px;
+      text-align: center;
+    }
+    header img {
+      max-width: 100%;
+      height: auto;
+    }
+    nav {
+      display: flex;
+      overflow-x: auto;
+      background-color: #fff;
+      padding: 10px 5px;
+    }
+    nav a {
+      flex: 0 0 auto;
+      margin: 0 10px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      background: #eee;
+      padding: 8px 12px;
+      border-radius: 20px;
+    }
+    .section-title {
+      padding: 15px;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      padding: 0 10px;
+    }
+    .product {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      flex: 0 0 calc(50% - 10px);
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+    }
+    .product img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    .product .info {
+      padding: 10px;
+    }
+    .flash-sale {
+      flex: 0 0 100%;
+      background: #ff5722;
+      color: white;
+      font-weight: bold;
+      padding: 5px;
+      font-size: 0.9em;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      border-radius: 5px;
+    }
+    .btn-ver-mais {
+      display: block;
+      width: 80%;
+      margin: 20px auto;
+      padding: 10px;
+      background: #ff5722;
+      color: white;
+      text-align: center;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body><header>
-  <button class="category-button active" onclick="filterCategory('all')">Todos</button>
-  <button class="category-button" onclick="filterCategory('saude')">Saúde</button>
-  <button class="category-button" onclick="filterCategory('casa')">Casa e Construção</button>
-  <button class="category-button" onclick="filterCategory('beleza')">Beleza</button>
-  <button class="category-button" onclick="filterCategory('masculina')">Roupa Masculina</button>
-  <button class="category-button" onclick="filterCategory('feminina')">Roupa Feminina</button>
-  <button class="category-button" onclick="filterCategory('musica')">Música</button>
-  <button class="category-button" onclick="filterCategory('projetores')">Projetores</button>
-</header><div class="container">
-  <div class="product-card saude">
-    <img src="massageador.jpg" alt="Massageador" class="product-image">
-    <div class="product-name">Massageador Elétrico Alta Frequência</div>
-    <a href="https://s.shopee.com.br/40TSykEkWO" class="product-link">Ver Produto</a>
-  </div>  <div class="product-card saude">
-    <img src="creatina.jpg" alt="Creatina" class="product-image">
-    <div class="product-name">Creatina Monohidratada Pura</div>
-    <a href="https://s.shopee.com.br/9f7pjLWjMG" class="product-link">Ver Produto</a>
-  </div>  <div class="product-card saude">
-    <img src="balanca.jpg" alt="Balança" class="product-image">
-    <div class="product-name">Balança Corporal Digital</div>
-    <a href="https://s.shopee.com.br/7pgBY84ntF" class="product-link">Ver Produto</a>
-  </div>  <div class="product-card saude">
-    <img src="termometro.jpg" alt="Termômetro" class="product-image">
-    <div class="product-name">Termômetro De Testa Infravermelha</div>
-    <a href="https://s.shopee.com.br/60EXMvgwQK" class="product-link">Ver Produto</a>
-  </div>  <div class="product-card casa">
-    <img src="tapete.jpg" alt="Tapete" class="product-image">
-    <div class="product-name">Tapete Banheiro Antiderrapante</div>
-    <a href="https://s.shopee.com.br/9pRFwFULi6" class="product-link">Ver Produto</a>
-  </div>  <div class="product-card casa">
-    <img src="ferramentas.jpg" alt="Ferramentas" class="product-image">
-    <div class="product-name">Jogo de Ferramentas Reversível</div>
-    <a href="https://s.shopee.com.br/2qHVbT1mG4" class="product-link">Ver Produto</a>
-  </div>  <div class="product-card casa">
-    <img src="capa.jpg" alt="Capa Colchão" class="product-image">
-    <div class="product-name">Capa Para Colchão Impermeável</div>
-    <a href="https://s.shopee.com.br/4L6JOMNdKe" class="product-link">Ver Produto</a>
-  </div>  <div class="product-card casa">
-    <img src="facas.jpg" alt="Facas" class="product-image">
-    <div class="product-name">Kit 6 Peças Conjunto de Facas</div>
-    <a href="https://s.shopee.com.br/6AXxZpw9uM" class="product-link">Ver Produto</a>
-  </div>  <div class="product-card casa">
-    <img src="esfregao.jpg" alt="Esfregão" class="product-image">
-    <div class="product-name">Esfregão Elétrico Sem Fio</div>
-    <a href="https://s.shopee.com.br/8fFIZy5X1C" class="product-link">Ver Produto</a>
-  </div>  <div class="product-card casa">
-    <img src="copo.jpg" alt="Copo Térmico" class="product-image">
-    <div class="product-name">Copo Térmico Inox 600ml</div>
-    <a href="https://s.shopee.com.br/2LLF1XVpvu" class="product-link">Ver Produto</a>
+  <img src="LINK-DA-IMAGEM-TOPO" alt="Banner">
+</header><nav>
+  <a href="#ofertas">Ofertas</a>
+  <a href="#saude">Saúde</a>
+  <a href="#tecnologia">Tecnologia</a>
+  <a href="#casa">Casa</a>
+  <a href="#eletro">Eletrodomésticos</a>
+  <a href="#bebes">Bebês</a>
+  <a href="#musica">Música</a>
+  <a href="#projetores">Projetores</a>
+</nav><div id="ofertas">
+  <div class="section-title">Ofertas Relâmpago</div>
+  <div class="products">
+    <div class="product">
+      <div class="flash-sale">Oferta Relâmpago</div>
+      <a href="LINK-OFERTA-1">
+        <img src="IMAGEM-OFERTA-1" alt="Produto Oferta">
+        <div class="info">REDMAGIC Nova Tablet Pro - R$5.198,60</div>
+      </a>
+    </div>
+    <div class="product">
+      <div class="flash-sale">Oferta Relâmpago</div>
+      <a href="LINK-OFERTA-2">
+        <img src="IMAGEM-OFERTA-2" alt="Produto Oferta">
+        <div class="info">REDMAGIC 10 Pro 5G - R$5.498,64 a R$9.880,00</div>
+      </a>
+    </div>
   </div>
-</div><script>
-function filterCategory(category) {
-  const cards = document.querySelectorAll('.product-card');
-  const buttons = document.querySelectorAll('.category-button');
-  buttons.forEach(btn => btn.classList.remove('active'));
-  event.target.classList.add('active');
-
-  cards.forEach(card => {
-    if (category === 'all') {
-      card.classList.remove('hidden');
-    } else {
-      card.classList.toggle('hidden', !card.classList.contains(category));
-    }
-  });
-}
-</script></body>
-        </html>
+  <a href="#" class="btn-ver-mais">Ver mais Ofertas</a>
+</div><div id="tecnologia">
+  <div class="section-title">Tecnologia</div>
+  <div class="products">
+    <div class="product">
+      <a href="LINK-PRODUTO-TECNO-1">
+        <img src="IMAGEM-TECNO-1" alt="Produto Tecnologia">
+        <div class="info">Monitor Safe Gamer 23,8" - R$594,90</div>
+      </a>
+    </div>
+    <!-- + produtos -->
+  </div>
+</div><div id="casa">
+  <div class="section-title">Casa e Construção</div>
+  <div class="products">
+    <div class="product">
+      <a href="LINK-PRODUTO-CASA-1">
+        <img src="IMAGEM-CASA-1" alt="Produto Casa">
+        <div class="info">Fritadeira Elétrica Airfryer 5L - R$384,90</div>
+      </a>
+    </div>
+    <!-- + produtos -->
+  </div>
+</div><div id="eletro">
+  <div class="section-title">Eletrodomésticos</div>
+  <div class="products">
+    <!-- produtos tipo cozinha, sala -->
+  </div>
+</div><div id="bebes">
+  <div class="section-title">Bebês e Crianças</div>
+  <div class="products">
+    <!-- Moda Infantil, Cuidados com a Saúde -->
+  </div>
+</div><!-- Música e Projetores — seções semelhantes --></body>
+</html>
