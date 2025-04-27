@@ -3,155 +3,76 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Minha Loja</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-    }
-    header {
-      background-color: #ff5722;
-      padding: 10px;
-      text-align: center;
-    }
-    header img {
-      max-width: 100%;
-      height: auto;
-    }
-    nav {
-      display: flex;
-      overflow-x: auto;
-      background-color: #fff;
-      padding: 10px 5px;
-    }
-    nav a {
-      flex: 0 0 auto;
-      margin: 0 10px;
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-      background: #eee;
-      padding: 8px 12px;
-      border-radius: 20px;
-    }
-    .section-title {
-      padding: 15px;
-      font-size: 1.2em;
-      font-weight: bold;
-    }
-    .products {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      padding: 0 10px;
-    }
-    .product {
-      background: #fff;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      flex: 0 0 calc(50% - 10px);
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      position: relative;
-    }
-    .product img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-    }
-    .product .info {
-      padding: 10px;
-    }
-    .flash-sale {
-      flex: 0 0 100%;
-      background: #ff5722;
-      color: white;
-      font-weight: bold;
-      padding: 5px;
-      font-size: 0.9em;
-      position: absolute;
-      top: 5px;
-      left: 5px;
-      border-radius: 5px;
-    }
-    .btn-ver-mais {
-      display: block;
-      width: 80%;
-      margin: 20px auto;
-      padding: 10px;
-      background: #ff5722;
-      color: white;
-      text-align: center;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body><header>
-  <img src="LINK-DA-IMAGEM-TOPO" alt="Banner">
-</header><nav>
-  <a href="#ofertas">Ofertas</a>
-  <a href="#saude">Saúde</a>
-  <a href="#tecnologia">Tecnologia</a>
-  <a href="#casa">Casa</a>
-  <a href="#eletro">Eletrodomésticos</a>
-  <a href="#bebes">Bebês</a>
-  <a href="#musica">Música</a>
-  <a href="#projetores">Projetores</a>
-</nav><div id="ofertas">
-  <div class="section-title">Ofertas Relâmpago</div>
-  <div class="products">
-    <div class="product">
-      <div class="flash-sale">Oferta Relâmpago</div>
-      <a href="LINK-OFERTA-1">
-        <img src="IMAGEM-OFERTA-1" alt="Produto Oferta">
-        <div class="info">REDMAGIC Nova Tablet Pro - R$5.198,60</div>
-      </a>
+  <div class="banner-carousel">
+    <img src="assets/banner1.jpg" alt="Promo Sapatos">
+    <img src="assets/banner2.jpg" alt="Promo Eletrônicos">
+    <img src="assets/banner3.jpg" alt="Promo Moda">
+    <img src="assets/banner4.jpg" alt="Promo Casa">
+  </div>  <nav class="categories">
+    <button onclick="filterCategory('ofertas')">Ofertas Relâmpago</button>
+    <button onclick="filterCategory('mais-vendidos')">Mais Vendidos</button>
+    <button onclick="filterCategory('saude')">Saúde</button>
+    <button onclick="filterCategory('casa')">Casa e Construção</button>
+    <button onclick="filterCategory('beleza')">Beleza</button>
+    <button onclick="filterCategory('roupa-masculina')">Roupa Masculina</button>
+    <button onclick="filterCategory('roupa-feminina')">Roupa Feminina</button>
+    <button onclick="filterCategory('tecnologia')">Tecnologia</button>
+    <button onclick="filterCategory('musica')">Música</button>
+    <button onclick="filterCategory('projetores')">Projetores</button>
+    <button onclick="filterCategory('bebe')">Bebês</button>
+  </nav>
+</header><main><section id="ofertas">
+  <h2>Ofertas Relâmpago</h2>
+  <div class="product-row">
+    <div class="product-large">
+      <img src="assets/redmagic-nova-tablet.jpg" alt="REDMAGIC Nova Tablet">
+      <p>REDMAGIC Nova Tablet Pro</p>
     </div>
-    <div class="product">
-      <div class="flash-sale">Oferta Relâmpago</div>
-      <a href="LINK-OFERTA-2">
-        <img src="IMAGEM-OFERTA-2" alt="Produto Oferta">
-        <div class="info">REDMAGIC 10 Pro 5G - R$5.498,64 a R$9.880,00</div>
-      </a>
+    <div>
+      <img src="assets/redmagic-10-pro.jpg" alt="REDMAGIC 10 Pro">
+      <p>REDMAGIC 10 Pro 5G</p>
+    </div>
+    <div>
+      <img src="assets/monitor-safe-gamer.jpg" alt="Monitor Safe Gamer">
+      <p>Monitor Safe Gamer 23.8</p>
     </div>
   </div>
-  <a href="#" class="btn-ver-mais">Ver mais Ofertas</a>
-</div><div id="tecnologia">
-  <div class="section-title">Tecnologia</div>
-  <div class="products">
-    <div class="product">
-      <a href="LINK-PRODUTO-TECNO-1">
-        <img src="IMAGEM-TECNO-1" alt="Produto Tecnologia">
-        <div class="info">Monitor Safe Gamer 23,8" - R$594,90</div>
-      </a>
+  <button class="ver-mais">Ver Mais</button>
+</section><section id="produtos">  <h2>Todos os Produtos</h2>  <div class="product-grid">
+    <div class="product-card saude">
+      <img src="assets/creatina-pura-300g.jpg" alt="Creatina Pura">
+      <p>Creatina Pura 300g</p>
     </div>
-    <!-- + produtos -->
-  </div>
-</div><div id="casa">
-  <div class="section-title">Casa e Construção</div>
-  <div class="products">
-    <div class="product">
-      <a href="LINK-PRODUTO-CASA-1">
-        <img src="IMAGEM-CASA-1" alt="Produto Casa">
-        <div class="info">Fritadeira Elétrica Airfryer 5L - R$384,90</div>
-      </a>
+    <div class="product-card saude">
+      <img src="assets/balanca-digital-180kg.jpg" alt="Balança Digital">
+      <p>Balança Digital 180kg</p>
     </div>
-    <!-- + produtos -->
-  </div>
-</div><div id="eletro">
-  <div class="section-title">Eletrodomésticos</div>
-  <div class="products">
-    <!-- produtos tipo cozinha, sala -->
-  </div>
-</div><div id="bebes">
-  <div class="section-title">Bebês e Crianças</div>
-  <div class="products">
-    <!-- Moda Infantil, Cuidados com a Saúde -->
-  </div>
-</div><!-- Música e Projetores — seções semelhantes --></body>
+    <div class="product-card saude">
+      <img src="assets/massageador-eletrico-portatil.jpg" alt="Massageador Elétrico">
+      <p>Massageador Portátil</p>
+    </div>
+    <div class="product-card casa">
+      <img src="assets/jogo-ferramentas-40-pecas.jpg" alt="Jogo de Ferramentas">
+      <p>Jogo de Ferramentas 40 Peças</p>
+    </div>
+    <div class="product-card saude bebe">
+      <img src="assets/termometro-digital-bebes.jpg" alt="Termômetro Digital">
+      <p>Termômetro Digital Bebês</p>
+    </div>
+    <div class="product-card casa">
+      <img src="assets/fritadeira-airfryer-oster.jpg" alt="Fritadeira AirFryer">
+      <p>Fritadeira AirFryer 5L</p>
+    </div>
+    <div class="product-card casa">
+      <img src="assets/esfregao-eletrico-sem-fio.jpg" alt="Esfregão Elétrico">
+      <p>Esfregão Elétrico Sem Fio</p>
+    </div>
+    <div class="product-card tecnologia">
+      <img src="assets/copo-termico-romanticcrown.jpg" alt="Copo Térmico">
+      <p>Copo Térmico ROMANTIC CROWN</p>
+    </div>
+  </div></section></main><script src="script.js"></script></body>
 </html>
