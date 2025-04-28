@@ -1,196 +1,188 @@
-<!DOCTYPE html><html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site de Produtos</title>
-    <style>
-        /* ----------- ESTILOS (CSS) ----------- */body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background-color: #f5f5f5;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meu Site de Produtos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f6f6f6;
+      margin: 0;
+      padding: 0;
     }
-
-    header {
-        background-color: #ff5e5e;
-        padding: 10px;
-        text-align: center;
-        color: white;
-        font-size: 24px;
-        font-weight: bold;
-    }
-
     .carousel {
-        display: flex;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        gap: 10px;
-        padding: 10px;
-        background: white;
+      width: 100%;
+      overflow-x: auto;
+      white-space: nowrap;
     }
-
     .carousel img {
-        height: 150px;
-        flex: none;
-        scroll-snap-align: center;
-        border-radius: 8px;
-        cursor: pointer;
+      width: 100%;
+      max-height: 180px;
+      object-fit: cover;
     }
-
     .categories {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 10px;
-        background-color: white;
-        gap: 10px;
+      display: flex;
+      overflow-x: auto;
+      background: #fff;
+      padding: 10px;
+      gap: 10px;
     }
-
-    .category-btn {
-        padding: 8px 16px;
-        background-color: #ff8c42;
-        color: white;
-        border: none;
-        border-radius: 20px;
-        cursor: pointer;
-        font-size: 14px;
+    .categories button {
+      background-color: #eee;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
     }
-
-    .product-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        padding: 10px;
-        justify-content: center;
+    .product-section {
+      padding: 10px;
     }
-
+    .section-title {
+      margin: 10px 0;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
     .product {
-        background: white;
-        border-radius: 8px;
-        width: 45%;
-        padding: 10px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        text-align: center;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+      padding: 5px;
+      font-size: 14px;
     }
-
     .product img {
-        width: 100%;
-        height: auto;
-        border-radius: 6px;
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
     }
-
     .flash-sale {
-        width: 90%;
-        background-color: #ffd700;
-        padding: 10px;
-        margin: 10px auto;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        text-align: center;
+      grid-column: span 2;
+      position: relative;
     }
-
     .flash-sale img {
-        width: 100%;
-        height: auto;
-        border-radius: 6px;
+      height: 200px;
     }
-
-    .flash-label {
-        background-color: red;
-        color: white;
-        font-weight: bold;
-        padding: 2px 6px;
-        border-radius: 4px;
-        position: absolute;
-        margin-top: -5px;
-        margin-left: -5px;
-        font-size: 12px;
+    .flash-sale::before {
+      content: 'OFERTA RELÂMPAGO';
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: red;
+      color: white;
+      padding: 4px 8px;
+      font-size: 12px;
+      font-weight: bold;
+      border-radius: 5px;
     }
-</style>
-
+    .product-name {
+      margin: 5px 0;
+    }
+    .product-price {
+      font-weight: bold;
+      color: #e60000;
+    }
+  </style>
 </head>
-<body><header>Promoções Incríveis</header>
+<body>
 
-<!-- ----------- CARROSSEL DE IMAGENS ----------- -->
-<div class="carousel">
-    <img src="banner1.jpg" alt="Promoção 1" onclick="filtrarCategoria('Calçados')">
-    <img src="banner2.jpg" alt="Promoção 2" onclick="filtrarCategoria('Tecnologia')">
-    <img src="banner3.jpg" alt="Promoção 3" onclick="filtrarCategoria('Beleza')">
-    <img src="banner4.jpg" alt="Promoção 4" onclick="filtrarCategoria('Casa e Construção')">
-</div>
+  <!-- Carrossel de imagens -->
+  <div class="carousel">
+    <img src="imagens/carrossel1.jpg" alt="Promoção 1">
+    <img src="imagens/carrossel2.jpg" alt="Promoção 2">
+    <img src="imagens/carrossel3.jpg" alt="Promoção 3">
+    <img src="imagens/carrossel4.jpg" alt="Promoção 4">
+  </div>
 
-<!-- ----------- BOTÕES DE CATEGORIA ----------- -->
-<div class="categories" id="categorias">
-    <!-- Botões gerados pelo JS -->
-</div>
+  <!-- Categorias -->
+  <div class="categories">
+    <button>Tecnologia</button>
+    <button>Casa e Construção</button>
+    <button>Beleza</button>
+    <button>Saúde</button>
+    <button>Música</button>
+    <button>Projetores</button>
+    <button>Eletrodomésticos</button>
+    <button>Bebês</button>
+  </div>
 
-<!-- ----------- PRODUTOS ----------- -->
-<div id="produtos" class="product-grid">
-    <!-- Produtos gerados pelo JS -->
-</div>
+  <!-- Ofertas Relâmpago -->
+  <div class="product-section">
+    <div class="section-title">Ofertas Relâmpago</div>
+    <div class="products-grid">
 
-<script>
-    /* ----------- SCRIPT (JS) ----------- */
+      <!-- Produtos com Oferta Relâmpago -->
+      <div class="product flash-sale">
+        <img src="imagens/redmagic-tablet.jpg" alt="Tablet REDMAGIC">
+        <div class="product-name">REDMAGIC Nova Tablet Pro 10.9''</div>
+        <div class="product-price">R$5.198,60</div>
+      </div>
 
-    const categorias = [
-        'Saúde', 'Casa e Construção', 'Beleza', 'Roupa Masculina', 'Roupa Feminina',
-        'Música', 'Projetores', 'Tecnologia', 'Bebês', 'Eletrodomésticos', 'Ferramentas'
-    ];
+      <div class="product flash-sale">
+        <img src="imagens/redmagic-10pro.jpg" alt="Smartphone REDMAGIC 10 Pro">
+        <div class="product-name">REDMAGIC 10 Pro 5G 144Hz</div>
+        <div class="product-price">R$5.498,64</div>
+      </div>
 
-    const produtos = [
-        {nome: 'Copo Térmico Inox 600ml', img: 'copo-termico.jpg', link: 'https://s.shopee.com.br/2LLF1XVpvu', categoria: 'Casa e Construção'},
-        {nome: 'Esfregão Elétrico Sem Fio', img: 'esfregao.jpg', link: 'https://s.shopee.com.br/8fFIZy5X1C', categoria: 'Casa e Construção'},
-        {nome: 'Tablet REDMAGIC Nova', img: 'tablet.jpg', link: 'https://s.shopee.com.br/2fy8Vb50Nk', categoria: 'Tecnologia', oferta: true},
-        {nome: 'Smartphone REDMAGIC 10 Pro', img: 'smartphone.jpg', link: 'https://s.shopee.com.br/7V3OGPx1Jg', categoria: 'Tecnologia', oferta: true},
-        {nome: 'Monitor Safe Gamer 23.8"', img: 'monitor.jpg', link: 'https://s.shopee.com.br/2LLI6idTFf', categoria: 'Tecnologia'},
-        {nome: 'Air Fryer Oster 5L', img: 'airfryer.jpg', link: 'https://s.shopee.com.br/6AY0jbuOmM', categoria: 'Eletrodomésticos'},
-        {nome: 'Creatina', img: 'creatina.jpg', link: '#', categoria: 'Saúde'},
-        {nome: 'Balança de Peso', img: 'balanca.jpg', link: '#', categoria: 'Saúde'},
-        {nome: 'Massageador Corporal', img: 'massageador.jpg', link: '#', categoria: 'Saúde'},
-        {nome: 'Kit Ferramentas', img: 'ferramentas.jpg', link: '#', categoria: 'Ferramentas'},
-        {nome: 'Termômetro Digital', img: 'termometro.jpg', link: '#', categoria: 'Bebês'}
-    ];
+      <div class="product flash-sale">
+        <img src="imagens/monitor-safegamer.jpg" alt="Monitor Safe Gamer">
+        <div class="product-name">Monitor Safe Gamer ProWork</div>
+        <div class="product-price">R$594,90</div>
+      </div>
 
-    function gerarCategorias() {
-        const container = document.getElementById('categorias');
-        categorias.forEach(cat => {
-            const btn = document.createElement('button');
-            btn.innerText = cat;
-            btn.className = 'category-btn';
-            btn.onclick = () => filtrarCategoria(cat);
-            container.appendChild(btn);
-        });
-    }
+    </div>
+  </div>
 
-    function gerarProdutos(filtroCategoria = '') {
-        const container = document.getElementById('produtos');
-        container.innerHTML = '';
-        
-        let lista = produtos.filter(p => !filtroCategoria || p.categoria === filtroCategoria);
+  <!-- Outros Produtos -->
+  <div class="product-section">
+    <div class="section-title">Mais Produtos</div>
+    <div class="products-grid">
 
-        lista.forEach(produto => {
-            const div = document.createElement('div');
-            div.className = produto.oferta ? 'flash-sale' : 'product';
+      <div class="product">
+        <img src="imagens/airfryer-oster.jpg" alt="Fritadeira Air Fryer">
+        <div class="product-name">Fritadeira Air Fryer Oster 5L</div>
+        <div class="product-price">R$384,90</div>
+      </div>
 
-            div.innerHTML = `
-                ${produto.oferta ? '<div class="flash-label">Oferta Relâmpago!</div>' : ''}
-                <a href="${produto.link}" target="_blank">
-                    <img src="${produto.img}" alt="${produto.nome}">
-                    <p>${produto.nome}</p>
-                </a>
-            `;
-            container.appendChild(div);
-        });
-    }
+      <div class="product">
+        <img src="imagens/creatina-growth.jpg" alt="Creatina Growth">
+        <div class="product-name">Creatina Growth Suplementos</div>
+        <div class="product-price">R$109,90</div>
+      </div>
 
-    function filtrarCategoria(categoria) {
-        gerarProdutos(categoria);
-    }
+      <div class="product">
+        <img src="imagens/balanca-digital.jpg" alt="Balança Digital">
+        <div class="product-name">Balança Digital Smart</div>
+        <div class="product-price">R$89,90</div>
+      </div>
 
-    // Inicializar
-    gerarCategorias();
-    gerarProdutos();
+      <div class="product">
+        <img src="imagens/massageador-cervical.jpg" alt="Massageador Cervical">
+        <div class="product-name">Massageador Cervical Inteligente</div>
+        <div class="product-price">R$149,90</div>
+      </div>
 
-</script>
+      <div class="product">
+        <img src="imagens/kit-ferramentas.jpg" alt="Kit Ferramentas">
+        <div class="product-name">Kit de Ferramentas Domésticas</div>
+        <div class="product-price">R$129,90</div>
+      </div>
+
+      <div class="product">
+        <img src="imagens/termometro-digital.jpg" alt="Termômetro Digital Bebê">
+        <div class="product-name">Termômetro Digital para Bebês</div>
+        <div class="product-price">R$59,90</div>
+      </div>
+
+    </div>
+  </div>
 
 </body>
-  </html>
+    </html>
