@@ -3,186 +3,221 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Meu Site de Produtos</title>
+  <title>Minha Loja</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f6f6f6;
       margin: 0;
-      padding: 0;
+      background: #f8f8f8;
+    }
+    header {
+      background: #ff5722;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 24px;
     }
     .carousel {
-      width: 100%;
+      display: flex;
       overflow-x: auto;
-      white-space: nowrap;
+      scroll-snap-type: x mandatory;
     }
     .carousel img {
       width: 100%;
-      max-height: 180px;
+      height: auto;
+      flex: 0 0 100%;
+      scroll-snap-align: center;
       object-fit: cover;
     }
-    .categories {
+    nav {
       display: flex;
-      overflow-x: auto;
-      background: #fff;
+      flex-wrap: wrap;
+      background: white;
       padding: 10px;
+      justify-content: center;
       gap: 10px;
     }
-    .categories button {
-      background-color: #eee;
+    nav button {
+      background: #eee;
       border: none;
-      padding: 8px 16px;
+      padding: 10px 20px;
       border-radius: 20px;
-      font-weight: bold;
+      font-size: 14px;
       cursor: pointer;
     }
-    .product-section {
-      padding: 10px;
-    }
     .section-title {
-      margin: 10px 0;
+      margin: 20px 10px 10px;
       font-size: 20px;
-      font-weight: bold;
     }
-    .products-grid {
+    .products {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
+      padding: 10px;
     }
     .product {
-      background: #fff;
+      background: white;
       border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       text-align: center;
-      padding: 5px;
       font-size: 14px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
     .product img {
       width: 100%;
-      height: 150px;
+      height: 120px;
       object-fit: cover;
+    }
+    .product-title {
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+    .product-price {
+      color: #ff5722;
+      margin-bottom: 10px;
     }
     .flash-sale {
       grid-column: span 2;
       position: relative;
     }
     .flash-sale img {
-      height: 200px;
+      height: 180px;
     }
     .flash-sale::before {
-      content: 'OFERTA RELÂMPAGO';
+      content: "Oferta Relâmpago!";
       position: absolute;
-      top: 8px;
-      left: 8px;
-      background: red;
-      color: white;
-      padding: 4px 8px;
-      font-size: 12px;
+      top: 10px;
+      left: 10px;
+      background: yellow;
+      color: red;
+      padding: 5px 10px;
       font-weight: bold;
       border-radius: 5px;
-    }
-    .product-name {
-      margin: 5px 0;
-    }
-    .product-price {
-      font-weight: bold;
-      color: #e60000;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Carrossel de imagens -->
-  <div class="carousel">
-    <img src="imagens/carrossel1.jpg" alt="Promoção 1">
-    <img src="imagens/carrossel2.jpg" alt="Promoção 2">
-    <img src="imagens/carrossel3.jpg" alt="Promoção 3">
-    <img src="imagens/carrossel4.jpg" alt="Promoção 4">
+<header>Minha Loja Oficial</header>
+
+<div class="carousel">
+  <img src="imagens/banner1.jpg" alt="Promoção 1">
+  <img src="imagens/banner2.jpg" alt="Promoção 2">
+  <img src="imagens/banner3.jpg" alt="Promoção 3">
+  <img src="imagens/banner4.jpg" alt="Promoção 4">
+</div>
+
+<nav>
+  <button>Tecnologia</button>
+  <button>Casa e Construção</button>
+  <button>Saúde</button>
+  <button>Moda</button>
+  <button>Bebês</button>
+  <button>Eletrodomésticos</button>
+</nav>
+
+<h2 class="section-title">Ofertas Relâmpago</h2>
+
+<div class="products">
+  <div class="product flash-sale">
+    <a href="https://s.shopee.com.br/2fy8Vb50Nk" target="_blank">
+      <img src="imagens/tablet.jpg" alt="Tablet Gamer">
+      <div class="product-title">Tablet Gamer 10.9" REDMAGIC</div>
+      <div class="product-price">R$5.198,60</div>
+    </a>
   </div>
 
-  <!-- Categorias -->
-  <div class="categories">
-    <button>Tecnologia</button>
-    <button>Casa e Construção</button>
-    <button>Beleza</button>
-    <button>Saúde</button>
-    <button>Música</button>
-    <button>Projetores</button>
-    <button>Eletrodomésticos</button>
-    <button>Bebês</button>
+  <div class="product">
+    <a href="https://s.shopee.com.br/7V3OGPx1Jg" target="_blank">
+      <img src="imagens/smartphone.jpg" alt="Smartphone REDMAGIC">
+      <div class="product-title">Smartphone REDMAGIC 10 Pro</div>
+      <div class="product-price">R$5.498,64</div>
+    </a>
   </div>
 
-  <!-- Ofertas Relâmpago -->
-  <div class="product-section">
-    <div class="section-title">Ofertas Relâmpago</div>
-    <div class="products-grid">
-
-      <!-- Produtos com Oferta Relâmpago -->
-      <div class="product flash-sale">
-        <img src="imagens/redmagic-tablet.jpg" alt="Tablet REDMAGIC">
-        <div class="product-name">REDMAGIC Nova Tablet Pro 10.9''</div>
-        <div class="product-price">R$5.198,60</div>
-      </div>
-
-      <div class="product flash-sale">
-        <img src="imagens/redmagic-10pro.jpg" alt="Smartphone REDMAGIC 10 Pro">
-        <div class="product-name">REDMAGIC 10 Pro 5G 144Hz</div>
-        <div class="product-price">R$5.498,64</div>
-      </div>
-
-      <div class="product flash-sale">
-        <img src="imagens/monitor-safegamer.jpg" alt="Monitor Safe Gamer">
-        <div class="product-name">Monitor Safe Gamer ProWork</div>
-        <div class="product-price">R$594,90</div>
-      </div>
-
-    </div>
+  <div class="product">
+    <a href="https://s.shopee.com.br/2LLI6idTFf" target="_blank">
+      <img src="imagens/monitor.jpg" alt="Monitor Safe Gamer">
+      <div class="product-title">Monitor Gamer Safe ProWork 23,8"</div>
+      <div class="product-price">R$594,90</div>
+    </a>
   </div>
 
-  <!-- Outros Produtos -->
-  <div class="product-section">
-    <div class="section-title">Mais Produtos</div>
-    <div class="products-grid">
-
-      <div class="product">
-        <img src="imagens/airfryer-oster.jpg" alt="Fritadeira Air Fryer">
-        <div class="product-name">Fritadeira Air Fryer Oster 5L</div>
-        <div class="product-price">R$384,90</div>
-      </div>
-
-      <div class="product">
-        <img src="imagens/creatina-growth.jpg" alt="Creatina Growth">
-        <div class="product-name">Creatina Growth Suplementos</div>
-        <div class="product-price">R$109,90</div>
-      </div>
-
-      <div class="product">
-        <img src="imagens/balanca-digital.jpg" alt="Balança Digital">
-        <div class="product-name">Balança Digital Smart</div>
-        <div class="product-price">R$89,90</div>
-      </div>
-
-      <div class="product">
-        <img src="imagens/massageador-cervical.jpg" alt="Massageador Cervical">
-        <div class="product-name">Massageador Cervical Inteligente</div>
-        <div class="product-price">R$149,90</div>
-      </div>
-
-      <div class="product">
-        <img src="imagens/kit-ferramentas.jpg" alt="Kit Ferramentas">
-        <div class="product-name">Kit de Ferramentas Domésticas</div>
-        <div class="product-price">R$129,90</div>
-      </div>
-
-      <div class="product">
-        <img src="imagens/termometro-digital.jpg" alt="Termômetro Digital Bebê">
-        <div class="product-name">Termômetro Digital para Bebês</div>
-        <div class="product-price">R$59,90</div>
-      </div>
-
-    </div>
+  <div class="product">
+    <a href="https://s.shopee.com.br/6AY0jbuOmM" target="_blank">
+      <img src="imagens/airfryer.jpg" alt="Air Fryer Oster">
+      <div class="product-title">Air Fryer Digital 5L Oster</div>
+      <div class="product-price">R$384,90</div>
+    </a>
   </div>
+
+  <div class="product">
+    <a href="#" target="_blank">
+      <img src="imagens/esfregao.jpg" alt="Esfregão 360º">
+      <div class="product-title">Esfregão 360º Premium</div>
+      <div class="product-price">R$199,90</div>
+    </a>
+  </div>
+
+  <div class="product">
+    <a href="#" target="_blank">
+      <img src="imagens/creatina.jpg" alt="Creatina">
+      <div class="product-title">Creatina Pura 300g</div>
+      <div class="product-price">R$99,90</div>
+    </a>
+  </div>
+
+  <div class="product">
+    <a href="#" target="_blank">
+      <img src="imagens/balanca.jpg" alt="Balança Digital">
+      <div class="product-title">Balança Digital de Precisão</div>
+      <div class="product-price">R$59,90</div>
+    </a>
+  </div>
+
+  <div class="product">
+    <a href="#" target="_blank">
+      <img src="imagens/massageador.jpg" alt="Massageador Elétrico">
+      <div class="product-title">Massageador Relaxante</div>
+      <div class="product-price">R$129,90</div>
+    </a>
+  </div>
+
+  <div class="product">
+    <a href="#" target="_blank">
+      <img src="imagens/ferramentas.jpg" alt="Kit de Ferramentas">
+      <div class="product-title">Kit de Ferramentas 32 peças</div>
+      <div class="product-price">R$149,90</div>
+    </a>
+  </div>
+
+  <div class="product">
+    <a href="#" target="_blank">
+      <img src="imagens/termometro.jpg" alt="Termômetro Digital">
+      <div class="product-title">Termômetro Digital Bebês</div>
+      <div class="product-price">R$89,90</div>
+    </a>
+  </div>
+
+</div>
+
+<script>
+  // Deixar o carrossel deslizando automaticamente
+  const carousel = document.querySelector('.carousel');
+  let scrollAmount = 0;
+  setInterval(() => {
+    if (scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
+      scrollAmount = 0;
+    } else {
+      scrollAmount += carousel.clientWidth;
+    }
+    carousel.scrollTo({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  }, 3000);
+</script>
 
 </body>
-    </html>
+</html>
